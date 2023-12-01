@@ -41,7 +41,7 @@ namespace RPGProjektgrupp22
                     PlayerWantsToExploreDungeon();
                 }
             }
-
+// Ta bort tom rad
         }
 
         private void PlayerWantsToExploreDungeon()

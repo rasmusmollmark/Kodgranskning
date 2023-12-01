@@ -15,30 +15,34 @@ namespace RPGProjektgrupp22
         private int dungeonsCleared = 0;
         private int dungeonIndex;
         private bool explored = false;
+
         public bool Explored
         {
             get { return explored; }
         }
+
         public Dungeon(int i)
         {
             dungeonIndex = i;
 
         }
+
         public bool Explore(Player player)
         {
-            int randomOutcome = rnd.Next(1, 10);
-            if (explored)
+          if (explored)
             {
                 Console.WriteLine("This dungeon has already been explored");
                 return false;
             }
-            else if (randomOutcome < 6)
+            int randomOutcome = rnd.Next(1, 10);
+            if (randomOutcome < 6)
             {
                 Console.WriteLine("You encounter an enemy");
                 EncounterEnemy(player);
+                // Ta bort kommentar
                 //Console.WriteLine("You are in the" + dungeonNameList[dungeonIndex]);
             }
-
+// Ta bort tom rad
             else
             {
 
@@ -47,20 +51,20 @@ namespace RPGProjektgrupp22
             }
             explored = true;
             return true;
-
+// Ta bort tomma rader
 
         }
 
         public string GetDungeonName() => dungeonNameList[dungeonIndex];
 
-
+// Ta bort tom rad
         private void EncounterEnemy(Player player)
         {
             Console.Clear();
             Enemy enemy = Enemy.GetRandomEnemy();
             Fight fight = new Fight(enemy, this);
             fight.Start(player);
-
+// Ta bort tomma rader
 
 
         }
@@ -80,7 +84,7 @@ namespace RPGProjektgrupp22
             // Återställ räknaren för klarade dungeons för nästa omgång
             player.ResetLevelsCompleted();
         }
-
+// Ta bort tomma rader
 
 
     }
