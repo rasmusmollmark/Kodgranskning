@@ -17,6 +17,8 @@ namespace RPGProjektgrupp22
         private int level = 1;
 
         private Inventory inventory;
+// Ta bort tomma rader i hela klassen, är mellan metoder som det ska finnas en tom rad
+// samt om det är en uppdelning i metoden, massa tomma rader blir jobbigt att läsa.
 
 
         public Player(string name) : base(name, 100, 20, 20, 15, 10)
@@ -24,8 +26,7 @@ namespace RPGProjektgrupp22
             inventory = new Inventory();
         }
 
-
-
+// Recievie stavas Receive Uppdatera på samtliga ställen.
         public void RecieveLoot(Loot loot, int xpGiven)
         {
             gold += loot.Gold;

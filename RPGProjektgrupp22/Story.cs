@@ -195,13 +195,14 @@ namespace RPGProjektgrupp22
                 int input = GetUserInput();
                 if (input < 3 && input > 0)
                 {
-                    switch (input)
-                    {
-                        case 1:
-                            return true;
-                        case 2:
-                            return false;
-                    }
+                input == 1 ? true : false;
+                   // switch (input)
+                   // {
+                     //   case 1:
+                       //     return true;
+                       // case 2:
+                         //   return false;
+                    //}
                 }
                 Console.WriteLine("Wrong input!");
             }

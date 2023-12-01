@@ -10,10 +10,10 @@ namespace RPGProjektgrupp22
     {
         protected string name;
         protected VendorInventory inventory;
-        protected List<string> Lore = new List<string>();
+        protected List<string> Lore = new List<string>(); // ska det vara stor bokstav på Lore när det är ett variabelnamn?
         protected string[] differentTypesOfGreetings;
 
-
+// Anropas denna metod någonstans ifrån
         public string InventoryToString() => inventory.InventoryToString();
 
 
