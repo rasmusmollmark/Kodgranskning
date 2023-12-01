@@ -21,7 +21,7 @@ namespace RPGProjektgrupp22
                 case 4:
                     return new Buckler();
                 default:
-                    return null;
+                    return null; // Borde ni inte skapa upp en klass här som innebär att man saknar utrustning istället för null
             }
         }
     }

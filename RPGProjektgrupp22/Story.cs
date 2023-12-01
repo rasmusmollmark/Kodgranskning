@@ -182,6 +182,7 @@ namespace RPGProjektgrupp22
 
         private void ClearWindow()
         {
+            // Det blev jättemycket mellanrum så skulle nog inte behöva vara så många radbryt
             Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         }
 
@@ -192,16 +193,11 @@ namespace RPGProjektgrupp22
                 Console.WriteLine("Do you want to visit town?\n" +
                     "1: Yes\n" +
                     "2. No, I want to explore");
-                int input = GetUserInput();
-                if (input < 3 && input > 0)
+                var input = GetUserInput();
+                if (input is < 3 and > 0)
                 {
-                    switch (input)
-                    {
-                        case 1:
-                            return true;
-                        case 2:
-                            return false;
-                    }
+                     return input == 1;
+                   
                 }
                 Console.WriteLine("Wrong input!");
             }
@@ -212,8 +208,8 @@ namespace RPGProjektgrupp22
             while (true)
             {
                 Console.Write("Pick the dungeon you wish to explore (1-4): ");
-                int input = GetUserInput();
-                if (input > 0 && input < 5)
+                int input = GetUserInput(); 
+                if (input > 0 && input < 5) // se metod ovan för ev förbättring
                 {
                     return input - 1;
                 }
@@ -221,7 +217,7 @@ namespace RPGProjektgrupp22
             }
 
         }
-        private void ExploreDungeon(int dungeonIndex)
+        private void ExploreDungeon(int dungeonIndex) // Används denna?
         {
             Dungeon selectedDungeon = dungeons[dungeonIndex];
 
@@ -234,18 +230,18 @@ namespace RPGProjektgrupp22
 
         private string getPlayerName()
         {
-            Console.Write("Please enter your characters name: ");
+            Console.Write("Please enter your characters name: "); // I metoden player name så ska man ange characters name, borde det inte vara player name?
             return Console.ReadLine();
         }
 
-        private void printCurrentLocation(string location)
+        private void printCurrentLocation(string location) // Används inte
         {
 
         }
 
         private void printStartOfGame()
         {
-            Console.WriteLine("This is an rpg based game where you will face different challanges by exploring a collection of dungeons.\n" +
+            Console.WriteLine("This is an rpg based game where you will face different challenges by exploring a collection of dungeons.\n" +
                 "You will choose one of the provided dungeons and explore it. If you survive you will have the opportunity to go back to town.\n" +
                 "In town you will be able to sell your loot and buy equipment and or consumables such as health potions.\n" +
                 "\nPress any key when ready: ");

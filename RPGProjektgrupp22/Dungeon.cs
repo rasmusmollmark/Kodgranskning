@@ -15,7 +15,7 @@ namespace RPGProjektgrupp22
         private int dungeonsCleared = 0;
         private int dungeonIndex;
         private bool explored = false;
-        public bool Explored
+        public bool Explored // Ser inte ut att användas
         {
             get { return explored; }
         }
@@ -26,13 +26,14 @@ namespace RPGProjektgrupp22
         }
         public bool Explore(Player player)
         {
-            int randomOutcome = rnd.Next(1, 10);
             if (explored)
             {
                 Console.WriteLine("This dungeon has already been explored");
                 return false;
             }
-            else if (randomOutcome < 6)
+// Bättre om denna är under if(explored) eftersom den inte behövs om grottan redan är utforskad.
+            int randomOutcome = rnd.Next(1, 10);
+            if (randomOutcome < 6)
             {
                 Console.WriteLine("You encounter an enemy");
                 EncounterEnemy(player);
@@ -45,6 +46,7 @@ namespace RPGProjektgrupp22
                 FindChest(player);
                 //Console.WriteLine("You are in the" + dungeonNameList[dungeonIndex]);
             }
+
             explored = true;
             return true;
 
@@ -73,6 +75,8 @@ namespace RPGProjektgrupp22
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
         }
+        
+        // Ska denna användas eller tas bort?
         private void GoToNextStage(Player player)
         {
             Console.WriteLine("Congratulations, " + player.GetName() + "! You have completed " + player.GetLevelsCompleted() + " dungeons and advanced to the next stage.");

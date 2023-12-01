@@ -232,6 +232,8 @@ namespace RPGProjektgrupp22
         }
         private void Equip(int index, Equipable equipped, Equipable toBeEquipped)
         {
+            // jag tycker man ska vända på dessa, inte negera villkor om man kan. Så 
+            // equipped == null och det som ska ske då år else.  Samma i metod under
             if (equipped != null)
             {
                 itemsInventoryList[index] = equipped;
@@ -245,16 +247,13 @@ namespace RPGProjektgrupp22
 
         public int GetDamageModifier()
         {
-            if (firstHand != null)
-            {
-                return (firstHand as Weapon).DamageModifier;
-            }
-            return 0;
+            // Borde ni inte här använda metoden ni skapade isEquipped()
+            return firstHand != null ? (firstHand as Weapon).DamageModifier : 0;
         }
 
         public int GetBlockChance()
         {
-            if (secondHand != null)
+            if (secondHand != null) // Borde ni inte använda isEquipped()
             {
                 return (secondHand as Shield).BlockChance;
             }
@@ -263,6 +262,7 @@ namespace RPGProjektgrupp22
 
         internal int GetAllAdditionalDefense()
         {
+            // Alla dessa som är en Equipable borde väl kolla om de IsEquipped() istället för null?
             int result = 0;
             if (chestArmor != null)
             {

@@ -20,7 +20,7 @@ namespace RPGProjektgrupp22
         {
             string welcome = "I am  Akara, High Priestess of the Sisterhood of the Sightless Eye.\n" +
                 "I welcome you, traveler, to our camp, but I'm afraid I can offer you but poor shelter within these rickety walls." +
-                "\nYou see, our ancient Sisterhood has  Fallen under a strange curse. The mighty Citadel from which we have \n" +
+                "\nYou see, our ancient Sisterhood has Fallen under a strange curse. The mighty Citadel from which we have \n" +
                 "guarded the gates to the East for generations, has been corrupted by the evil Demoness, Andariel.\n" +
                 "I still can't believe it... but she turned many of our sister Rogues against us and drove us from our ancestral home.\n" +
                 "Now the last defenders of the Sisterhood are either dead or scattered throughout the wilderness." +

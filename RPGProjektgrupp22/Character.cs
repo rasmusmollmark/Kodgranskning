@@ -15,9 +15,10 @@ namespace RPGProjektgrupp22
         protected int defense; // Ett fält som representerar försvar
         protected int agility; // Ett fält som representerar smidighet
         protected int speed; // Ett fält som representerar hastighet
+       // Ni ger denna ett värde men används inte sedan, om ni uppdaterar i tex Enemy så kommer den nog användas.
         protected int damage; //Ett fält som representerar skada
         protected bool isDead = false; // Ett fält som representerar om karaktären är död eller inte
-        public Character(string name, int health, int damage)
+        public Character(string name, int health, int damage) // används inte, kan tas bort
         {
             this.name = name;
             this.health = health;
@@ -34,15 +35,11 @@ namespace RPGProjektgrupp22
             this.speed = speed;
         }
 
-        public bool IsDead => isDead;
+        public bool IsDead => isDead; // Verkar inte användas
 
         protected int Health
         {
-            set
-            {
-                if (value > maxHealth) { health = maxHealth; }
-                else { health = value; }
-            }
+            set { health = value > maxHealth ? maxHealth : value; }
             get { return health; }
         }
 
@@ -78,7 +75,7 @@ namespace RPGProjektgrupp22
             }
         }
 
-
+// Används inte
         public void AttackCharacter(Character character) // En metod som attackerar en annan karaktär
         {
             character.TakeDamage(strength); // Anropa TakeDamage metoden på den andra karaktären med styrka som argument

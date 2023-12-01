@@ -10,7 +10,7 @@ namespace RPGProjektgrupp22
     {
 
         private int levelsCompletedThisStage = 0;
-        private int levelsCompletedTotal = 0;
+        private int levelsCompletedTotal = 0; // kommer den användas vid senare tillfälle?
         private int gold = 100;
         private int xp = 0;
         private int xpToNextLevel = 20;
@@ -26,7 +26,7 @@ namespace RPGProjektgrupp22
 
 
 
-        public void RecieveLoot(Loot loot, int xpGiven)
+        public void ReceiveLoot(Loot loot, int xpGiven)
         {
             gold += loot.Gold;
             inventory.AddItemToList(loot.Item);
@@ -34,7 +34,7 @@ namespace RPGProjektgrupp22
             xp += xpGiven;
             CheckIfLevelUp();
         }
-
+// Receice stavas det, uppdatera samtliga, finns kortkommando för att ändra alla samtidigt, tex CTRL + F6
         public void RecieveBoughtConsumable(Consumable consumable) => inventory.AddConsumableToList(consumable);
         public void RecieveBoughtEquippable(Equipable equipable) => inventory.AddItemToList(equipable);
 

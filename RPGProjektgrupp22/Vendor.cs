@@ -13,7 +13,7 @@ namespace RPGProjektgrupp22
         protected List<string> Lore = new List<string>();
         protected string[] differentTypesOfGreetings;
 
-
+// metod verkar inte användas
         public string InventoryToString() => inventory.InventoryToString();
 
 

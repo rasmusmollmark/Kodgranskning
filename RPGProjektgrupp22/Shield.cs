@@ -8,7 +8,8 @@ namespace RPGProjektgrupp22
 {
     public class Shield : Equipable
     {
-        protected int defense;
+        // de kan vara private
+        protected int defense; 
         protected int blockChance;
         public Shield(int defense, int blockChance, int sellValue) : base(sellValue, "Shield")
         {

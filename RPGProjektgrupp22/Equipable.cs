@@ -22,6 +22,7 @@ namespace RPGProjektgrupp22
         public int Price => sellValue * 3;
         public int SellValue => sellValue;
 
+        // Verkar inte användas
         public bool isEquipped() => equipped;
 
         public void Equip()
